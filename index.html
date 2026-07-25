@@ -1,12 +1,121 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FightMemo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FightMemo</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#111;
+    color:#fff;
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
+}
+
+header{
+    padding:32px 24px;
+    border-bottom:1px solid #333;
+}
+
+h1{
+    font-size:34px;
+    font-weight:700;
+}
+
+.subtitle{
+    color:#999;
+    margin-top:8px;
+}
+
+.event{
+    padding:28px 24px;
+    border-bottom:1px solid #262626;
+}
+
+.date{
+    font-size:14px;
+    color:#888;
+}
+
+.sport{
+    margin-top:10px;
+    color:#ff5050;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.title{
+    margin-top:12px;
+    font-size:22px;
+    font-weight:700;
+}
+
+.fighters{
+    margin-top:18px;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.info{
+    margin-top:18px;
+    color:#bbb;
+}
+
+.button{
+    display:inline-block;
+    margin-top:18px;
+    color:white;
+    text-decoration:none;
+    border:1px solid #444;
+    padding:10px 18px;
+    border-radius:999px;
+}
+</style>
+
 </head>
-<body style="font-family:sans-serif;padding:40px;">
-  <h1>🥊 FightMemo</h1>
-  <p>開発スタート！</p>
+
+<body>
+
+<header>
+<h1>🥊 FightMemo</h1>
+<div class="subtitle">今後の試合予定</div>
+</header>
+
+<div class="event">
+
+<div class="date">
+2026.7.27(日)
+</div>
+
+<div class="sport">
+BOXING
+</div>
+
+<div class="title">
+世界タイトルマッチ
+</div>
+
+<div class="fighters">
+井上尚弥<br>
+中谷潤人<br>
+寺地拳四朗
+</div>
+
+<div class="info">
+19:00　U-NEXT
+</div>
+
+<a class="button" href="#">
+詳細を見る
+</a>
+
+</div>
+
 </body>
 </html>
