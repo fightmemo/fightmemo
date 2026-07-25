@@ -1,61 +1,58 @@
-const fights = [
-  {
-    sport: "RIZIN",
-    date: "2026/7/26",
-    event: "RIZIN LANDMARK",
-    fighter1: "朝倉未来",
-    fighter2: "平本蓮",
-    url: "https://jp.rizinff.com/"
-  },
-  {
-    sport: "BOXING",
-    date: "2026/8/3",
-    event: "世界タイトルマッチ",
-    fighter1: "井上尚弥",
-    fighter2: "対戦相手未定",
-    url: "https://boxingnews.jp/"
-  },
-  {
-    sport: "ONE",
-    date: "2026/8/16",
-    event: "ONE Championship",
-    fighter1: "武尊",
-    fighter2: "スーパーレック",
-    url: "https://www.onefc.com/"
-  }
-];
+async function loadFights() {
 
-const list = document.getElementById("fight-list");
+    const response = await fetch("fights.json");
+    const fights = await response.json();
 
-fights.forEach(fight => {
+    const list = document.getElementById("fight-list");
+    list.innerHTML = "";
 
-  const card = document.createElement("div");
-  card.className = "card";
+    fights.forEach(fight => {
 
-  let sportClass = "";
+        const card = document.createElement("div");
+        card.className = "card";
 
-  if (fight.sport === "RIZIN") sportClass = "rizin";
-  if (fight.sport === "BOXING") sportClass = "boxing";
-  if (fight.sport === "ONE") sportClass = "one";
+        let sportClass = "";
 
-  card.innerHTML = `
-    <div class="sport ${sportClass}">${fight.sport}</div>
+        if (fight.sport === "RIZIN") sportClass = "rizin";
+        if (fight.sport === "BOXING") sportClass = "boxing";
+        if (fight.sport === "ONE") sportClass = "one";
 
-    <div class="date">${fight.date}</div>
+        card.innerHTML = `
+            <div class="sport ${sportClass}">
+                ${fight.sport}
+            </div>
 
-    <div class="event">${fight.event}</div>
+            <div class="date">
+                ${fight.date}
+            </div>
 
-    <div class="fighters">
-        <div>${fight.fighter1}</div>
-        <div class="vs">VS</div>
-        <div>${fight.fighter2}</div>
-    </div>
-  `;
+            <div class="venue">
+                📍 ${fight.venue}
+            </div>
 
-  card.onclick = () => {
-    window.open(fight.url, "_blank");
-  };
+            <div class="stream">
+                📺 ${fight.stream}
+            </div>
 
-  list.appendChild(card);
+            <div class="event">
+                ${fight.event}
+            </div>
 
-});
+            <div class="fighters">
+                <div>${fight.fighter1}</div>
+                <div class="vs">VS</div>
+                <div>${fight.fighter2}</div>
+            </div>
+        `;
+
+        card.onclick = () => {
+            window.open(fight.url, "_blank");
+        };
+
+        list.appendChild(card);
+
+    });
+
+}
+
+loadFights();

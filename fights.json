@@ -1,0 +1,42 @@
+[
+    {
+        "sport": "RIZIN",
+        "date": "2026-07-26",
+        "event": "RIZIN LANDMARK",
+        "fighter1": "朝倉未来",
+        "fighter2": "平本蓮",
+        "venue": "さいたまスーパーアリーナ",
+        "stream": "U-NEXT",
+        "url": "https://jp.rizinff.com/"
+    },
+    {
+        "sport": "BOXING",
+        "date": "2026-08-03",
+        "event": "世界タイトルマッチ",
+        "fighter1": "井上尚弥",
+        "fighter2": "対戦相手未定",
+        "venue": "未定",
+        "stream": "未定",
+        "url": "https://boxingnews.jp/"
+    },
+    {
+        "sport": "ONE",
+        "date": "2026-08-16",
+        "event": "ONE Championship",
+        "fighter1": "武尊",
+        "fighter2": "スーパーレック",
+        "venue": "未定",
+        "stream": "ONE Fight App",
+        "url": "https://www.onefc.com/"
+    },
+    {
+        "sport": "RIZIN",
+        "date": "2026-09-27",
+        "event": "RIZIN.53",
+        "fighter1": "未定",
+        "fighter2": "未定",
+        "venue": "IGアリーナ（名古屋）",
+        "stream": "U-NEXT",
+        "url": "https://jp.rizinff.com/"
+    }
+]
