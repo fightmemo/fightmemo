@@ -1,1 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    background: #111827;
+    color: #fff;
+    padding: 24px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #9ca3af;
+    font-size: 1rem;
+}
+
+#fight-list {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #1f2937;
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 18px;
+    transition: .2s;
+    border-left: 6px solid #3b82f6;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.sport {
+    display: inline-block;
+    font-size: .8rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+}
+
+.rizin {
+    background: #ef4444;
+}
+
+.boxing {
+    background: #f59e0b;
+}
+
+.one {
+    background: #10b981;
+}
+
+.date {
+    color: #9ca3af;
+    margin-bottom: 10px;
+}
+
+.event {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.fighters {
+    text-align: center;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.vs {
+    color: #9ca3af;
+    margin: 6px 0;
+}
