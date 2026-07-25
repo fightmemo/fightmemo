@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>FightMemo</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -24,8 +26,7 @@ header{
 }
 
 h1{
-    font-size:34px;
-    font-weight:700;
+    font-size:36px;
 }
 
 .subtitle{
@@ -33,49 +34,42 @@ h1{
     margin-top:8px;
 }
 
-.event{
-    padding:28px 24px;
-    border-bottom:1px solid #262626;
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:24px;
+}
+
+.card{
+    background:#1b1b1b;
+    border:1px solid #2d2d2d;
+    border-radius:14px;
+    padding:22px;
+    margin-bottom:18px;
+    transition:.2s;
+}
+
+.card:hover{
+    border-color:#666;
 }
 
 .date{
-    font-size:14px;
-    color:#888;
-}
-
-.sport{
-    margin-top:10px;
-    color:#ff5050;
+    color:#ff4d4d;
     font-weight:bold;
-    letter-spacing:1px;
+    margin-bottom:10px;
 }
 
-.title{
-    margin-top:12px;
+.event{
     font-size:22px;
-    font-weight:700;
+    font-weight:bold;
+    margin-bottom:14px;
 }
 
 .fighters{
-    margin-top:18px;
+    color:#ddd;
     line-height:1.8;
-    font-size:18px;
 }
 
-.info{
-    margin-top:18px;
-    color:#bbb;
-}
-
-.button{
-    display:inline-block;
-    margin-top:18px;
-    color:white;
-    text-decoration:none;
-    border:1px solid #444;
-    padding:10px 18px;
-    border-radius:999px;
-}
 </style>
 
 </head>
@@ -83,37 +77,67 @@ h1{
 <body>
 
 <header>
+
 <h1>🥊 FightMemo</h1>
-<div class="subtitle">今後の試合予定</div>
+
+<div class="subtitle">
+格闘技スケジュールをひとつに。
+</div>
+
 </header>
 
-<div class="event">
+<div class="container">
+
+<div class="card">
 
 <div class="date">
-2026.7.27(日)
+7月26日
 </div>
 
-<div class="sport">
-BOXING
+<div class="event">
+RIZIN LANDMARK
 </div>
 
-<div class="title">
+<div class="fighters">
+朝倉未来<br>
+平本蓮
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="date">
+8月3日
+</div>
+
+<div class="event">
 世界タイトルマッチ
 </div>
 
 <div class="fighters">
 井上尚弥<br>
-中谷潤人<br>
-寺地拳四朗
+対戦相手未定
 </div>
 
-<div class="info">
-19:00　U-NEXT
 </div>
 
-<a class="button" href="#">
-詳細を見る
-</a>
+<div class="card">
+
+<div class="date">
+8月16日
+</div>
+
+<div class="event">
+ONE Championship
+</div>
+
+<div class="fighters">
+武尊<br>
+スーパーレック
+</div>
+
+</div>
 
 </div>
 
