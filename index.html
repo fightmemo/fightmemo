@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FightMemo</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
@@ -16,9 +14,23 @@
 </header>
 
 <main>
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="選手名、大会名、会場などで検索...">
+    </div>
+
+    <div id="filter-container">
+        <button class="filter-btn active" data-sport="all">すべて</button>
+        <button class="filter-btn" data-sport="RIZIN">RIZIN</button>
+        <button class="filter-btn" data-sport="ボクシング">ボクシング</button>
+        <button class="filter-btn" data-sport="ONE Championship">ONE</button>
+        <button class="filter-btn" data-sport="UFC">UFC</button>
+        <button class="filter-btn" data-sport="K-1">K-1</button>
+        <button class="filter-btn" data-sport="RISE">RISE</button>
+        <button class="filter-btn" data-sport="シュートボクシング">シュートボクシング</button>
+        <button class="filter-btn" data-sport="favorites" style="background-color: #374151; border-color: #f59e0b; color: #f59e0b;">⭐ お気に入り</button>
+    </div>
 
     <div id="fight-list"></div>
-
 </main>
 
 <script src="script.js"></script>
