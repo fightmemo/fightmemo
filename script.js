@@ -9,6 +9,9 @@ fetch('fights.json')
     let currentSport = 'all';
     let searchKeyword = '';
     let favorites = JSON.parse(localStorage.getItem('fight_favorites')) || [];
+    let predictions = JSON.parse(localStorage.getItem('fight_predictions')) || {};
+    // 開いている大会イベント名を記憶するセット
+    let openEvents = new Set();
 
     function renderFights() {
       const container = document.getElementById('fight-list');
@@ -44,10 +47,38 @@ fetch('fights.json')
         card.className = 'fight-card';
 
         const isFav = favorites.includes(fight.event);
+        const isOpen = openEvents.has(fight.event); // この大会が開いていたか
 
         let fightsHtml = '';
-        fight.fights.forEach(f => {
-          fightsHtml += `<div class="fighters-item">⚔️ ${f.fighter1} vs ${f.fighter2}</div>`;
+        fight.fights.forEach((f, index) => {
+          const fightKey = `${fight.event}_${index}`;
+          const userPred = predictions[fightKey] || f.prediction || '';
+          const actualWinner = f.winner || '';
+
+          const btn1Style = userPred === f.fighter1 ? 'background: #3b82f6; color: white; border-color: #3b82f6;' : 'background: #1f2937; color: #d1d5db; border-color: #374151;';
+          const btn2Style = userPred === f.fighter2 ? 'background: #3b82f6; color: white; border-color: #3b82f6;' : 'background: #1f2937; color: #d1d5db; border-color: #374151;';
+
+          let resultBadge = '';
+          if (actualWinner) {
+            if (userPred === actualWinner) {
+              resultBadge = '<span style="color: #10b981; font-size: 12px; margin-left: 8px;">🎯 的中!</span>';
+            } else if (userPred) {
+              resultBadge = '<span style="color: #ef4444; font-size: 12px; margin-left: 8px;">❌ 外れ</span>';
+            } else {
+              resultBadge = '<span style="color: #9ca3af; font-size: 12px; margin-left: 8px;">未予想</span>';
+            }
+          }
+
+          fightsHtml += `
+            <div class="fighters-item" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; padding: 6px; background: #1f2937; border-radius: 4px;">
+              <div style="font-size: 14px; flex: 1;">
+                <button class="pred-btn" data-fight-key="${fightKey}" data-fighter="${f.fighter1}" style="padding: 4px 8px; border-radius: 4px; border: 1px solid; cursor: pointer; margin-right: 4px; ${btn1Style}">${f.fighter1}</button>
+                vs
+                <button class="pred-btn" data-fight-key="${fightKey}" data-fighter="${f.fighter2}" style="padding: 4px 8px; border-radius: 4px; border: 1px solid; cursor: pointer; margin-left: 4px; ${btn2Style}">${f.fighter2}</button>
+                ${resultBadge}
+              </div>
+            </div>
+          `;
         });
 
         card.innerHTML = `
@@ -59,9 +90,9 @@ fetch('fights.json')
           </div>
           <div class="date">${fight.date}</div>
           
-          <div class="event-name clickable-event" title="クリックして対戦カードを開閉">${fight.event} ▾</div>
+          <div class="event-name clickable-event" title="クリックして対戦カードを開閉">${fight.event} ${isOpen ? '▴' : '▾'}</div>
           
-          <div class="fights-container" style="display: none; margin: 10px 0; padding: 10px; background: #111827; border-radius: 6px;">
+          <div class="fights-container" style="display: ${isOpen ? 'block' : 'none'}; margin: 10px 0; padding: 10px; background: #111827; border-radius: 6px;">
             ${fightsHtml}
           </div>
 
@@ -73,22 +104,24 @@ fetch('fights.json')
           </div>
         `;
 
-        // 大会名をクリックしたときに対戦カードを開閉する処理
         const eventNameEl = card.querySelector('.clickable-event');
         const fightsContainer = card.querySelector('.fights-container');
+        
         eventNameEl.addEventListener('click', () => {
           if (fightsContainer.style.display === 'none') {
             fightsContainer.style.display = 'block';
             eventNameEl.textContent = `${fight.event} ▴`;
+            openEvents.add(fight.event); // 開いた状態を記録
           } else {
             fightsContainer.style.display = 'none';
             eventNameEl.textContent = `${fight.event} ▾`;
+            openEvents.delete(fight.event); // 閉じた状態を記録
           }
         });
 
-        // お気に入りボタンのクリックイベント
         const favBtn = card.querySelector('.fav-btn');
-        favBtn.addEventListener('click', () => {
+        favBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
           if (favorites.includes(fight.event)) {
             favorites = favorites.filter(eventName => eventName !== fight.event);
           } else {
@@ -98,11 +131,64 @@ fetch('fights.json')
           renderFights();
         });
 
+        const predBtns = card.querySelectorAll('.pred-btn');
+        predBtns.forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            
+            const fightKey = e.target.getAttribute('data-fight-key');
+            const chosenFighter = e.target.getAttribute('data-fighter');
+
+            if (predictions[fightKey] === chosenFighter) {
+              delete predictions[fightKey];
+            } else {
+              predictions[fightKey] = chosenFighter;
+            }
+
+            localStorage.setItem('fight_predictions', JSON.stringify(predictions));
+            renderFights();
+            updateStats();
+          });
+        });
+
         container.appendChild(card);
       });
     }
 
+    function updateStats() {
+      let totalPredicted = 0;
+      let totalCorrect = 0;
+
+      data.forEach(fight => {
+        fight.fights.forEach((f, index) => {
+          const fightKey = `${fight.event}_${index}`;
+          const userPred = predictions[fightKey];
+          const actualWinner = f.winner;
+
+          if (userPred) {
+            totalPredicted++;
+            if (actualWinner && userPred === actualWinner) {
+              totalCorrect++;
+            }
+          }
+        });
+      });
+
+      let statsEl = document.getElementById('stats-display');
+      if (!statsEl) {
+        statsEl = document.createElement('div');
+        statsEl.id = 'stats-display';
+        statsEl.style.cssText = 'text-align: center; margin: 15px 0; padding: 10px; background: #1f2937; border-radius: 8px; color: #f3f4f6; font-weight: bold;';
+        const searchContainer = document.getElementById('search-container');
+        searchContainer.parentNode.insertBefore(statsEl, searchContainer.nextSibling);
+      }
+
+      const rate = totalPredicted > 0 ? ((totalCorrect / totalPredicted) * 100).toFixed(1) : 0.0;
+      statsEl.innerHTML = `📊 予想的中率: ${rate}% （的中: ${totalCorrect}勝 / 予想数: ${totalPredicted}試合）`;
+    }
+
     renderFights();
+    updateStats();
 
     const buttons = document.querySelectorAll('.filter-btn');
     buttons.forEach(button => {

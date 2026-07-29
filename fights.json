@@ -7,17 +7,17 @@
     "stream": "ABEMA / U-NEXT / RIZIN 100 CLUB 等",
     "officialUrl": "https://jp.rizinff.com/_ct/17846026",
     "fights": [
-      { "fighter1": "クレベル・コイケ", "fighter2": "秋元強真" },
-      { "fighter1": "佐藤将光", "fighter2": "パッチー・ミックス" },
-      { "fighter1": "後藤丈治", "fighter2": "アジズベク・テミロフ" },
-      { "fighter1": "伊藤裕樹", "fighter2": "アリベク・ガジャマトフ" },
-      { "fighter1": "摩嶋一整", "fighter2": "武田光司" },
-      { "fighter1": "ケイト・ロータス", "fighter2": "NOEL" },
-      { "fighter1": "水野新太", "fighter2": "リー・カイウェン" },
-      { "fighter1": "直樹", "fighter2": "細川一颯" },
-      { "fighter1": "平本丈", "fighter2": "ジョリー" },
-      { "fighter1": "上田幹雄", "fighter2": "エドポロキング" },
-      { "fighter1": "スダリオ剛", "fighter2": "酒井リョウ" }
+      { "fighter1": "クレベル・コイケ", "fighter2": "秋元強真", "prediction": "", "winner": "" },
+      { "fighter1": "佐藤将光", "fighter2": "パッチー・ミックス", "prediction": "", "winner": "" },
+      { "fighter1": "後藤丈治", "fighter2": "アジズベク・テミロフ", "prediction": "", "winner": "" },
+      { "fighter1": "伊藤裕樹", "fighter2": "アリベク・ガジャマトフ", "prediction": "", "winner": "" },
+      { "fighter1": "摩嶋一整", "fighter2": "武田光司", "prediction": "", "winner": "" },
+      { "fighter1": "ケイト・ロータス", "fighter2": "NOEL", "prediction": "", "winner": "" },
+      { "fighter1": "水野新太", "fighter2": "リー・カイウェン", "prediction": "", "winner": "" },
+      { "fighter1": "直樹", "fighter2": "細川一颯", "prediction": "", "winner": "" },
+      { "fighter1": "平本丈", "fighter2": "ジョリー", "prediction": "", "winner": "" },
+      { "fighter1": "上田幹雄", "fighter2": "エドポロキング", "prediction": "", "winner": "" },
+      { "fighter1": "スダリオ剛", "fighter2": "酒井リョウ", "prediction": "", "winner": "" }
     ]
   },
   {
@@ -28,22 +28,22 @@
     "stream": "U-NEXT 等",
     "officialUrl": "https://gonkaku.jp/events/BaUQJDAjvQ",
     "fights": [
-      { "fighter1": "ペットムアンカン・チョーハーパヤック", "fighter2": "安部 焰" },
-      { "fighter1": "藤原乃愛", "fighter2": "カナ・ウォーワンチャイ" },
-      { "fighter1": "レンタ・ウォーワンチャイ", "fighter2": "羅向" },
-      { "fighter1": "キリョウ・シリラック", "fighter2": "小林凜太朗" },
-      { "fighter1": "駿太", "fighter2": "パルコ・レンジャージム" },
-      { "fighter1": "与儀竜也", "fighter2": "立喜ウィラサクレック" },
-      { "fighter1": "林 京平", "fighter2": "JAY-Z fellow gym" },
-      { "fighter1": "佐野天馬", "fighter2": "宮本雅大" },
-      { "fighter1": "小野寺楓珂", "fighter2": "村木太樹" },
-      { "fighter1": "飛翼", "fighter2": "れい" },
-      { "fighter1": "篠崎竜之介", "fighter2": "BANKI" },
-      { "fighter1": "宇宙・フライスカイジム", "fighter2": "生野逸晟" },
-      { "fighter1": "アキト・オーチャロンチャイ", "fighter2": "石橋昇也" },
-      { "fighter1": "コウキ・レンジャージム", "fighter2": "ミサイル雄" },
-      { "fighter1": "世利JSK", "fighter2": "BONNIE" },
-      { "fighter1": "淳平・レンジャージム", "fighter2": "(対戦相手未定)" }
+      { "fighter1": "ペットムアンカン・チョーハーパヤック", "fighter2": "安部 焰", "prediction": "", "winner": "" },
+      { "fighter1": "藤原乃愛", "fighter2": "カナ・ウォーワンチャイ", "prediction": "", "winner": "" },
+      { "fighter1": "レンタ・ウォーワンチャイ", "fighter2": "羅向", "prediction": "", "winner": "" },
+      { "fighter1": "キリョウ・シリラック", "fighter2": "小林凜太朗", "prediction": "", "winner": "" },
+      { "fighter1": "駿太", "fighter2": "パルコ・レンジャージム", "prediction": "", "winner": "" },
+      { "fighter1": "与儀竜也", "fighter2": "立喜ウィラサクレック", "prediction": "", "winner": "" },
+      { "fighter1": "林 京平", "fighter2": "JAY-Z fellow gym", "prediction": "", "winner": "" },
+      { "fighter1": "佐野天馬", "fighter2": "宮本雅大", "prediction": "", "winner": "" },
+      { "fighter1": "小野寺楓珂", "fighter2": "村木太樹", "prediction": "", "winner": "" },
+      { "fighter1": "飛翼", "fighter2": "れい", "prediction": "", "winner": "" },
+      { "fighter1": "篠崎竜之介", "fighter2": "BANKI", "prediction": "", "winner": "" },
+      { "fighter1": "宇宙・フライスカイジム", "fighter2": "生野逸晟", "prediction": "", "winner": "" },
+      { "fighter1": "アキト・オーチャロンチャイ", "fighter2": "石橋昇也", "prediction": "", "winner": "" },
+      { "fighter1": "コウキ・レンジャージム", "fighter2": "ミサイル雄", "prediction": "", "winner": "" },
+      { "fighter1": "世利JSK", "fighter2": "BONNIE", "prediction": "", "winner": "" },
+      { "fighter1": "淳平・レンジャージム", "fighter2": "(対戦相手未定)", "prediction": "", "winner": "" }
     ]
   },
   {
@@ -54,11 +54,11 @@
     "stream": "U-NEXT",
     "officialUrl": "https://gonkaku.jp/events/NCYqSVztJC",
     "fights": [
-      { "fighter1": "重森陽太", "fighter2": "REITO BRAVELY" },
-      { "fighter1": "壱・センチャイジム", "fighter2": "乙津陸" },
-      { "fighter1": "渡部 蕾", "fighter2": "谷津晴之" },
-      { "fighter1": "福田海斗", "fighter2": "竹内賢一" },
-      { "fighter1": "漁鬼", "fighter2": "吉宗" }
+      { "fighter1": "重森陽太", "fighter2": "REITO BRAVELY", "prediction": "", "winner": "" },
+      { "fighter1": "壱・センチャイジム", "fighter2": "乙津陸", "prediction": "", "winner": "" },
+      { "fighter1": "渡部 蕾", "fighter2": "谷津晴之", "prediction": "", "winner": "" },
+      { "fighter1": "福田海斗", "fighter2": "竹内賢一", "prediction": "", "winner": "" },
+      { "fighter1": "漁鬼", "fighter2": "吉宗", "prediction": "", "winner": "" }
     ]
   },
   {
@@ -69,12 +69,12 @@
     "stream": "UFC FIGHT PASS",
     "officialUrl": "https://gonkaku.jp/events/StnRtYYXYN",
     "fights": [
-      { "fighter1": "ロン・ジュー", "fighter2": "ヴィクター・マルティネス" },
-      { "fighter1": "ナムスライ・バトバヤル", "fighter2": "イン・シュアイ" },
-      { "fighter1": "原口伸", "fighter2": "カイ・カマカ・ジュニア" },
-      { "fighter1": "中村京一郎", "fighter2": "キム・サンウォン" },
-      { "fighter1": "上迫博仁", "fighter2": "ソン・ヨンジェ" },
-      { "fighter1": "寺山瑞樹", "fighter2": "フィリップ・デラクルーズ" }
+      { "fighter1": "ロン・ジュー", "fighter2": "ヴィクター・マルティネス", "prediction": "", "winner": "" },
+      { "fighter1": "ナムスライ・バトバヤル", "fighter2": "イン・シュアイ", "prediction": "", "winner": "" },
+      { "fighter1": "原口伸", "fighter2": "カイ・カマカ・ジュニア", "prediction": "", "winner": "" },
+      { "fighter1": "中村京一郎", "fighter2": "キム・サンウォン", "prediction": "", "winner": "" },
+      { "fighter1": "上迫博仁", "fighter2": "ソン・ヨンジェ", "prediction": "", "winner": "" },
+      { "fighter1": "寺山瑞樹", "fighter2": "フィリップ・デラクルーズ", "prediction": "", "winner": "" }
     ]
   }
 ]
